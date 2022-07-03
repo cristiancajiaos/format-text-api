@@ -18,4 +18,11 @@ public class OpResultController {
         OpResult result = new OpResult(counter.incrementAndGet(), newStr);
         return result;
     }
+
+    @GetMapping("uppercase")
+    public OpResult uppercase(@RequestParam(value="str", defaultValue = "Hello, world!") String str) {
+        String newStr = str.toUpperCase();
+        OpResult result = new OpResult(counter.incrementAndGet(), newStr);
+        return result;
+    }
 }
